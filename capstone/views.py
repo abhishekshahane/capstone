@@ -5,5 +5,4 @@ from . import list_of_cities
 # Create your views here.
 cities = list_of_cities.thousands_of_cities
 def index(request):
-    print(cities)
-    return HttpResponse('good')
+    return render(request, 'index.html')
