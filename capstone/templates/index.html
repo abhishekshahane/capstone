@@ -1,14 +1,15 @@
 {% extends "layout.html " %}
 {% block body %}
-    {% form %}
-    <form onsubmit="snowflake_animation()">
-        <select id="cities">
-            <option value="" type="default"></option>
-            {% for city in cities %}
-                <option value="{{ city }}">{{ city }}</option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="Submit">
-    </form>
-    
+    <div id="form_view">
+        <form action="{% url 'citydata' %}" method="POST">
+            {% csrf_token %}
+            <select id="cities" name="user_city" id="user_city">
+                <option value="" type="default"></option>
+                {% for city in cities %}
+                    <option value="{{ city }}">{{ city }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 {% endblock %}
