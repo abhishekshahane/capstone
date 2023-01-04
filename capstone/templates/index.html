@@ -1,7 +1,7 @@
 {% extends "layout.html " %}
 {% block body %}
     <div id="form_view">
-        <form action="{% url 'citydata' %}" method="POST">
+        <form action="{% url 'loading' %}" method="POST">
             {% csrf_token %}
             <select id="cities" name="user_city" id="user_city">
                 <option value="" type="default"></option>

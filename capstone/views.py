@@ -10,11 +10,13 @@ def index(request):
     return render(request, 'index.html', {
         'cities': cities
     })
-def citydata(request):
+def loading(request):
     if request.method == 'POST':
         # chosen city for that session
         request.session["city_chosen"] = request.POST["user_city"]
         print(request.session["city_chosen"])
-        return HttpResponseRedirect(reverse('index'))
+        return render(request, 'snowflake_animation.html')
         # Animations after this
+    # fill out the form first!
+    return HttpResponseRedirect(reverse('index'))
         
