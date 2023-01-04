@@ -1,3 +1,0 @@
-snowflake_animation = () => {
-    
-}
